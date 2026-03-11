@@ -1,9 +1,12 @@
 export async function getCampaign() {
-  // Mock data
+  // Datos de tu campaña
   return {
-    title: "Quiero mi Play!!!",
+    title: "Quiero mi Pc Gamer!!!",
     description:
-      " Hola, soy Marce, y estoy lanzando esta campaña porque siempre he soñado con tener una PlayStation 5. Para mí, los videojuegos no son solo un pasatiempo, son una forma de conectar con amigos, explorar historias increíbles y desafiarme en cada partida. \n\n Con tu apoyo, puedo acercarme a cumplir este sueño. Cada aporte cuenta, desde un café hasta compartir esta campaña con tus amigos. ¡Gracias por ser parte de esta aventura!",
-    amount: 600000,
+      "Hola, soy Joaquín tengo 13 años, y estoy lanzando esta campaña porque mi gran meta es armar mi propia PC Gamer. Para mí, esta computadora no es solo para jugar; es la herramienta que necesito para potenciar mis estudios y, al mismo tiempo, disfrutar de mi pasión por los videojuegos. \n\n Con tu apoyo, puedo estar más cerca de contar con un equipo que me permita aprender, crear y conectar con amigos en cada partida. Cada aporte suma muchísimo, desde un cafecito hasta compartir este link. ¡Gracias por impulsarme a cumplir este sueño!",
+    // ACÁ PODÉS CAMBIAR EL MONTO:
+    amount: 2500000,
+    // ACÁ ESTÁ LA IMAGEN (leyendo de public/img/pc gamer.webp)
+    image: "/img/pc gamer.webp"
   };
 }

@@ -17,6 +17,7 @@ $large-screens: 769px;
   @media (min-width: $large-screens) {
     border-radius: 12px;
     background-color: #212121;
+    color: #fff;
     text-align: center;
   }
 }

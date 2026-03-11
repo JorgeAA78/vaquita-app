@@ -17,6 +17,7 @@ $large-screens: 769px;
   letter-spacing: 1px;
   font-size: 13px;
   font-weight: 600;
+  color: #eee;
 }
 
 .textField {
@@ -25,8 +26,9 @@ $large-screens: 769px;
   border: none;
   padding: 12px;
   font-size: inherit;
-  color: inherit;
   font-family: inherit;
+  background-color: #333;
+  color: #fff;
 }
 
 .payButton {

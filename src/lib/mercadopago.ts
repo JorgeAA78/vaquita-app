@@ -3,13 +3,14 @@ import { MercadoPagoConfig, Payment, Preference } from "mercadopago";
 
 // Step 2: Initialize the client object
 const client = new MercadoPagoConfig({
-  accessToken: process.env.MP_TOKEN as string,
+  accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN as string,
   options: { timeout: 5000, idempotencyKey: "abc" },
 });
 
-const BASE_URL = process.env.VERCEL_URL || "apx.school";
-
-// Step 3: Initialize the API object
+const isLocal = process.env.NODE_ENV === "development";
+const BASE_URL = isLocal 
+  ? "http://localhost:4004" 
+  : `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || "apx.school"}`;// Step 3: Initialize the API object
 const pref = new Preference(client);
 
 type CreatePrefOptions = {
@@ -45,9 +46,9 @@ export async function createSingleProductPreference(
       ],
       // URL de redirección en los distintos casos
       back_urls: {
-        success: "https://" + BASE_URL + "/donate/success",
-        failure: "https://" + BASE_URL + "/donate/failure",
-        pending: "https://" + BASE_URL + "/donate/pending",
+        success: BASE_URL + "/donate/success",
+        failure: BASE_URL + "/donate/failure",
+        pending: BASE_URL + "/donate/pending",
       },
       // Esto puede ser el id o algún otro identificador
       // que te ayude a vincular este pago con el producto más adelante

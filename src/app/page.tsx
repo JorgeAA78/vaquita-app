@@ -18,7 +18,8 @@ export default async function Home() {
         <div className={styles.goal}>
           <img
             className={styles.goalImg}
-            src="https://www.shutterstock.com/image-photo/new-playstation-5-slim-model-260nw-2377124501.jpg"
+            src={campaign.image}
+            alt="Campaign"
           />
           <div className={styles.goalTexts}>
             <h2 className={styles.goalTitle}>{campaign.title}</h2>
