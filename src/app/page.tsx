@@ -4,6 +4,10 @@ import { getConfirmedPayments } from "@/lib/purchases";
 import { getCampaign } from "@/lib/campaign";
 import Link from "next/link";
 
+// Forzar SSR dinámico: nunca cachear esta página.
+// Así los montos y la barra siempre reflejan datos reales de Firebase.
+export const revalidate = 0;
+
 export default async function Home() {
   const confirmed = await getConfirmedPayments();
   const totalDonations = confirmed.reduce((a, b) => a + b.amount, 0);
